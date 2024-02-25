@@ -53,38 +53,61 @@ function SidebarRight() {
   };  
 
   const handleSubmit = () => {
-    window.alert('I have no php yet :)');
+    window.alert('The php is not working because I dont know how to do it');
     setShowPopup(true);
-  //   const receiptData = {
-  //     selectedToppings,
-  //     totalPrice,
-  //   };
-
-  //   fetch('your_php_script.php', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(receiptData),
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       // Handle the response if needed
-  //       console.log(data);
-        
-  //       // Show a popup box
-  //       window.alert('Order submitted successfully!');
-  //     })
-  //     .catch(error => {
-  //       // Handle errors
-  //       console.error('Error:', error);
-
-  //       // Show an error popup
-  //       window.alert('Error submitting order. Please try again.');
-      // });
-  };
-
+    const receiptData = {
+      selectedToppings,
+      totalPrice,
+    };
   
+    // Create a string representation of the receipt data
+    const receiptString = createReceiptString(receiptData);
+  
+    fetch('http://localhost:3000/receipt/saveReceipt.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ receiptString }),
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Handle the response if needed
+        console.log(data);
+  
+        // Show a popup box
+        window.alert('Order submitted successfully!');
+      })
+      .catch(error => {
+        // Log the error for debugging
+        console.error('Error:', error);
+  
+        // Show an error popup
+        window.alert('Error submitting order. Please try again.');
+      });
+  };
+  
+  // Function to create a string representation of the receipt data
+  const createReceiptString = (receiptData) => {
+    const { selectedToppings, totalPrice } = receiptData;
+  
+    let receiptString = "Receipt Data:\n";
+    receiptString += "Selected Toppings:\n";
+  
+    selectedToppings.forEach((topping) => {
+      receiptString += `- ${topping.name}\n`;
+    });
+  
+    receiptString += `Total Price: $${totalPrice.toFixed(2)}`;
+  
+    return receiptString;
+  };  
+
   const closePopup = () => {
     setShowPopup(false);
   };

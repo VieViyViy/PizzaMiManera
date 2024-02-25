@@ -76,6 +76,10 @@
     margin-left: 0;
     height: 100%;
 }
+    .container-left a{
+       text-decoration: none; 
+       color: #3b342d;
+    }
 
 .topping-container {
     display: flex;
@@ -118,6 +122,21 @@
     bottom: 2%;
     z-index: 200;
 }
+
+.wrap .floating-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #deccbb; /* Green background color */
+    color: #3b342d; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Add cursor on hover */
+  }
+  
+  .wrap .floating-container button:hover {
+    background-color: #c5b4a4; /* Darker green color on hover */
+  }
+  
 
 .popup-container {
     background-color: whitesmoke;
