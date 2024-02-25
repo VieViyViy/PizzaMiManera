@@ -4,7 +4,7 @@ function Home() {
     //const goes here
 
     return (
-        <div style={{backgroundColor: "white", position: "absolute", marginLeft: "10vw" }}></div>
+        <div className="mainPanel"></div>
     );
 }
 

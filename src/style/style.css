@@ -1,0 +1,56 @@
+.mainPanel {
+    background-image: url('../resource/lobby.png');
+    background-size: inherit;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 0;
+    height: 100vh;
+    z-index: -100;
+}
+
+.Header {
+    z-index: 100;
+}
+
+.Header .titleImage img{
+    height: 10vh;
+}
+
+.Dough {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+}
+
+.Dough .doughImage img {
+    height: 50vh;
+}
+
+.Dough .toppingImage img {
+    height: 50vh;
+}
+
+.SidebarLeft {
+    z-index: 100;
+}
+
+.container-left {
+    width: 10vw;
+    background-color: black;
+    position: absolute;
+    margin-left: 0;
+    height: 100%;
+}
+
+.SidebarRight {
+    z-index: 100;
+}
+
+.container-right {
+    width: 10vw;
+    background-color: #f9e8d9;
+    position: absolute;
+    right: 0;
+    height: 100%;
+}

@@ -4,7 +4,7 @@ function SidebarLeft() {
     //const goes here
 
     return (
-        <div style={{ width: "10vw", backgroundColor: "black", position: "absolute", marginLeft: 0, height: "100%" }}>text</div>
+        <div className="container-left">text</div>
     );
 }
 

@@ -1,16 +1,13 @@
 import React from 'react';
 import "../style/style.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSchoolFlag } from '@fortawesome/free-solid-svg-icons';
+import titleImage from '../resource/title.png'; 
 
 function Header() {
     return (
-        <div className="header" style={{backgroundColor:"green"}}>
+        <div className="Header">
             <ul>
-                <a href="HomePage">
-                    <i>
-                        some text
-                    </i>
+                <a href="/HomePage">
+                    <div className="titleImage"><img src={titleImage} alt="Good Pizza, Great Pizza"/></div>
                 </a>
             </ul>
         </div>
