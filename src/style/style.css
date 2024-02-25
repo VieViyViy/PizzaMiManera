@@ -10,6 +10,9 @@
 
 .Header {
     z-index: 100;
+    top: 0;
+    background-color: #f9e8d9;
+    height: 50px;
 }
 
 .Header .titleImage img{
@@ -17,18 +20,49 @@
 }
 
 .Dough {
+    background-image: url('../resource/tabletop.jpg');
+    background-size: 70%;
+    background-position: left 330px top -80px ;
+    background-repeat: no-repeat;
+    z-index: -100;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh; /* Adjust the height as needed */
+    position: relative;
 }
 
-.Dough .doughImage img {
-    height: 50vh;
+.Dough {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust this value as needed */
+  }
+  
+  .Dough .doughImage {
+    z-index: 50;
+  }
+  
+  .wrap .toppingImage {
+    position: absolute;
+    top: 32.7%;
+    left: 37.7%;
+  }
+  
+  .wrap .toppingImage div {
+    position: absolute;
+    z-index: 100;
+    /* display: none; Initially hide the divs */
+  }
+
+.visible {
+    display: block;
+    z-index: 100;
 }
 
-.Dough .toppingImage img {
-    height: 50vh;
+.hidden {
+    display: none;
 }
 
 .SidebarLeft {
@@ -36,21 +70,44 @@
 }
 
 .container-left {
-    width: 10vw;
-    background-color: black;
+    width: 21.5vw;
+    background-color: #deccbb;
     position: absolute;
     margin-left: 0;
     height: 100%;
 }
+
+.topping-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .topping-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8px;
+  }
+  
+  .topping-preview {
+    margin-bottom: 4px;
+  }
+
+  .topping-preview img{
+    width: 90%;
+  }
 
 .SidebarRight {
     z-index: 100;
 }
 
 .container-right {
-    width: 10vw;
+    width: 15vw;
     background-color: #f9e8d9;
     position: absolute;
     right: 0;
     height: 100%;
+    max-height: 91vh;
+    overflow-y: auto; /* Enable vertical scrolling */
+    
 }
