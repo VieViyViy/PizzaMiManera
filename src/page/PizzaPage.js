@@ -1,20 +1,22 @@
 import React from 'react';
 import "../style/style.css";
-import Home from '../components/Home';
 import Header from '../components/Header';
+import SidebarRight from '../components/SidebarRight';
 import SidebarLeft from '../components/SidebarLeft';
 import GlobalStyle from './GlobalStyles';
+import Pizza from '../components/Pizza';
 
-function HomePage(){
+function PizzaPage(){
     
     return(
         <div className="App">
             <GlobalStyle/>
             <Header/>
+            <SidebarRight/>
             <SidebarLeft/>
-            <Home/>
+            <Pizza/>
         </div>
     );
 }
 
-export default HomePage;
+export default PizzaPage;
